@@ -6,7 +6,7 @@
     <title>Document</title>
     
     <!-- 자바스크립트 플러그인 -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <!-- swiper -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -21,13 +21,21 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 
+    <!-- 애니메이션 CSS -->
+    <link rel="stylesheet" href="./css/animation.css">
+
     <!-- 사용자 JS -->
     <script src="./js/main.js"></script>
 
     <!-- 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
+    <!-- color box -->
+    <link rel="stylesheet" href="./css/colorbox.css">
+    <script src="./js/jquery.colorbox.js"></script>
+    
 </head>
 <body>
     <div id="wrap">
@@ -35,17 +43,19 @@
             <div class="container">
                 <div class="nav_left">
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Skills</a></li>
+                        <li><a class="h_font" href="#content1">About</a></li>
+                        <li><a class="h_font" href="#content3">Skills</a></li>
                     </ul>
                 </div>
 
-                <h1><a href="#"><img src="./img/logo2.svg" alt=""></a></h1>
-
+                <a href="#visual" id="logo">
+                    <h1 class="h_logo"></h1>
+                </a>
+                
                 <div class="nav_right">
                     <ul>
-                        <li><a href="#">Work</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a class="h_font" href="#content4">Work</a></li>
+                        <li><a class="h_font" href="#content6">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -55,37 +65,39 @@
                         <div class="hamb h_top"></div>
                         <div class="hamb h_middle"></div>
                     <ul id="menu">
-                        <a href="#"> <li>Home</li></a>
-                        <a href="#"> <li>About</li></a>
-                        <a href="#"> <li>Skills</li></a>
-                        <a href="#"> <li>Work</li></a>
-                        <a href="#"> <li>Contact</li></a>
+                        <a href="#visual"> <li>Home</li></a>
+                        <a href="#page-start"> <li>About</li></a>
+                        <a href="#content3"> <li>Skills</li></a>
+                        <a href="#content4"> <li>Work</li></a>
+                        <a href="#content6"> <li>Contact</li></a>
                     </ul>
                     </a>	
                 </div>
             </div>
         </div>
 
-        <div id="visual">
+        <div id="visual" class="bg-pan-left gradient">
             <div class="container"> 
                 <div class="element">
-                    <div class="building1"></div>
-                    <div class="building2"></div>
-                    <div class="building3"></div>
+                    <div class="building1 fade-in-bottom2"></div>
+                    <div class="building2 fade-in-bottom1"></div>
+                    <div class="building3 fade-in-bottom3"></div>
                 </div>
 
                 <div class="visual_text">
                     <div class="quote1"><img src="./img/visual/quote1.svg" alt="quote"></div>
-                    <h1>
-                        HELLO! <br>
-                        WHAT A PRETTY DAY! <br>
-                        I'M KIM SOO <br>
-                        WELCOME TO MY WORLD
-                    </h1>
+                    <h1 class="typing">
+                        <span
+                           class="txt-rotate"
+                           data-period="2000"
+                           data-rotate='[ "HELLO!", "I AM KIM SOO", "WELCOME TO MY WORLD ☺"]'></span>
+                      </h1>
                     <div class="quote2"><img src="./img/visual/quote2.svg" alt="quote"></div>
                 </div>
             </div>
         </div>
+
+        <div class="page-start" id="page-start"></div>
 
         <div id="contents">
             <div id="content1">
@@ -101,9 +113,16 @@
                         </div>
                         <div class="right">
                             <h2>INTRODUCE</h2>
-                            <p>것은 봄날의 그들은 넣는 속에서 이 설레는 못할 풍부하게 끓는다. 더운지라 않는 청춘을 하였으며, 힘있다. 목숨을 그들은 얼마나 것이다. 싸인 꽃 있음으로써 군영과 철환하였는가? 희망의 무엇을 설산에서 듣는다. 같이, 광야에서 얼음과 같은 같이, 위하여 아름다우냐?</p>
+                            <p>
+                                무엇이든 처음부터 잘하진 않지만 답답함이 풀릴 때까지 파고드는 집요함으로 진득하게 성장하는 웹퍼블리셔 김수입니다.  
+
+                                감각적인 디자인과 실용적인 인터페이스를 위해 항상 고민합니다.
+
+                                겸손함과 책임감을 잃지 않는 자세로 끈끈하게, 길게 뻗어 나가는 담장 위 넝쿨같은 사람이 되고 싶습니다.   
+                            </p>
                         </div>
                     </div>
+
                     <div class="bottom">
                         <div>
                             <h2>PROFILE</h2>
@@ -124,23 +143,23 @@
                         </div>
                         <div>
                             <h2>CERTIFICATION</h2>
+                            <p>웹디자인기능사 <br>
+                                <span>2020.  10. 19    ·   한국산업인력공단</span>
+                            </p>
+                            <p>GTQ 포토샵 1급 <br>
+                                <span>2020.  10. 16    ·   한국생산성본부</span>
+                            </p>
                             <p>TOEIC (SCORE: 845) <br>
                                 <span>2019.  6. 15    ·   YBM</span>
                             </p>
                             <p>컴퓨터활용능력 1급 <br>
                                 <span>2019.  11. 01    ·   대한상공회의소</span>
                             </p>
-                            <p>GTQ 포토샵 1급 <br>
-                                <span>2020.  10. 16    ·   한국생산성본부</span>
-                            </p>
-                            <p>웹디자인기능사 <br>
-                                <span>2020.  10. 19    ·   한국산업인력공단</span>
-                            </p>
                         </div>
                     </div>
                 </div>
-            </div>  
-                   
+            </div>
+
             <div id="content2">
                 <div class="top">
                     <div class="text-wrapper">
@@ -151,82 +170,467 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="bottom">
+                    <div id="carouselTicker" class="carouselTicker">
+                        <ul class="carouselTicker__list"> 
+                            <li class="carouselTicker__item">
+                                <div class="box1">
+                                    <div class="text">
+                                        <ul>
+                                            <li><img src="./img/content2/time.png" alt="시간약속"></li>
+                                            <li>시간약속은 기본</li>
+                                            <li>
+                                                친구들과의 약속에도 늦지 않을 정도로 시간약속을 가장 중요하게 생각해요. (어쩔 수 없이 늦게 되면 그날 밥값은 제가 다 쏜답니다...!) 시간 준수는 무슨 일에 있건 첫 단추라고 생각합니다. 첫 단추부터 잘 끼우지 않으면 다 흐트러질 수밖에 없으니까요ㅎㅎ
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li class="carouselTicker__item">
+                                <div class="box2">
+                                    <div class="text">
+                                        <ul>
+                                            <li><img src="./img/content2/building.png" alt="책임감"></li>
+                                            <li>책임감, 그리고 신뢰</li>
+                                            <li>
+                                                과제를 하든, 일을 하든 
+                                                대충 떠넘겨야지 하는 경우가 없었어요. 아르바이트할 때도 제 가게처럼 했습니다..ㅎㅎ
+                                                그래서 사장님들이 좋아해 주셨어요!
+                                                맡은 바는 제가 할 수 있는 한 끝까지 해내려 합니다. 자신에게, 상대에게 신뢰있는 사람이 되고 싶어요.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li class="carouselTicker__item">
+                                <div class="box3">
+                                    <div class="text">
+                                        <ul>
+                                            <li><img src="./img/content2/love.png" alt="배려심"></li>
+                                            <li>높은 공감능력</li>
+                                            <li>
+                                                친구들이 고민상담을 자주 합니다. 공감을 잘해줘서 그런 것 같아요. 대화를 나누면 상대의 감정과 상황에 몰입하게 되요. 공감능력이 높아서 상대의 말의 의도나 감정을 빠르게 헤아립니다. 원할한 의사소통은 항상 즐거워요 ☺
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li class="carouselTicker__item">
+                                <div class="box4">
+                                    <div class="text">
+                                        <ul>
+                                            <li><img src="./img/content2/broom.png" alt="정리정돈"></li>
+                                            <li>청소가 취미</li>
+                                            <li>
+                                                집에 오면 가장 먼저 하는 게 노래들으면서 
+                                                방닦기랍니다..ㅎㅎ 너저분한 걸 싫어해서
+                                                물건이 항상 같은 자리에 있어야 맘이 편해요.
+                                                주변 환경부터 깔끔해야 마음이 정리되고 일도
+                                                안정적으로 할 수 있다고 생각합니다.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li class="carouselTicker__item">
+                                <div class="box5">
+                                    <div class="text">
+                                        <ul>
+                                            <li><img src="./img/content2/clown.png" alt="표현력"></li>
+                                            <li>풍부한 표현력</li>
+                                            <li>
+                                                표현을 맛깔나게 한다는 말을 자주 들어요.
+                                                어떤 상황이나 물건 등에 대해 웃음 포인트를 잘 찝어내서 그런 것 같아요. 섬세하고 풍부한 표현력으로 맛깔나는 아이디어를 제안해보겠습니다 ☺
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content3" class="hideme">
+                <div class="clouds">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud big front slowest">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant smaller">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg>  
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant smaller2">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg> 
+
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small slow">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small2 slow">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg>
+
+
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small3 slow">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg>
+
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant super-slow massive">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant super-slow massive2">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+                    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud slower">
+                    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+                    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+                    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+                    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+                    </svg>
+                </div>
+
                 <div class="container">
-                    <div class="bottom">
-                        <div id="carouselTicker" class="carouselTicker">
-                            <ul class="carouselTicker__list">
+                    <div class="ican">
+                        <h1 class="shake-ican">저는 이런 것들을 할 수 있어요 </h1>
+                    </div>
+
+                    <div class="flip-container flip-container1" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                          <div class="front1">
+                              <p>PHOTOSHOP</p>
+                          </div>
+                          <div class="back1">
+                              <p>85%</p>    
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-container flip-container2" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                          <div class="front2">
+                              <p>HTML</p>
+                          </div>
+                          <div class="back2">
+                              <p>90%</p>    
+                          </div>
+                        </div>
+                    </div>
+              
+                    <div class="flip-container flip-container3" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                          <div class="front3">
+                              <p>JAVASCRIPT
+                                  <br>
+                                  & JQUERY
+                              </p>
+                              
+                          </div>
+                          <div class="back3">
+                              <p>65%</p>    
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-container flip-container4" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                          <div class="front4">
+                              <p>CSS</p>      
+                          </div>
+                          <div class="back4">
+                              <p>90%</p>    
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-container flip-container5" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                          <div class="front5">
+                              <p>ILLUSTRATOR</p>      
+                          </div>
+                          <div class="back5">
+                              <p>75%</p>    
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-container flip-container6" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                          <div class="front6">
+                              <p>PREMIERE</p>
+                          </div>
+                          <div class="back6">
+                              <p>50%</p>    
+                          </div>
+                        </div>
+                    </div>
                     
-                                <li class="carouselTicker__item">
-                                    <div class="box1">
-                                        <div class="text">
-                                            <ul>
-                                                <li><img src="./img/content2/time.png" alt="시간약속"></li>
-                                                <li>시간약속은 기본</li>
-                                                <li>제 생활기록부엔 지각이 없었고, 친구들과의 약속에도 절대 늦지 않을 정도로 시간약속을 가장 중요하게 생각해요. 첫단추가 중요하듯 모든 업무의 시작인 시간준수를 잘 꿰지 않으면 안된다고 생각해요!</li>
-                                            </ul>
+                </div>
+            </div>
+
+            <div id="content4">
+                <div class="container">
+                    <div class="top">
+                        <div class="work">
+                            <h1>Publishing</h1>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="mockup_container">
+                                    <div class="mockup">
+                                        <img src="https://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/12/apple-macbook-pro-retina-flat-design-front-view-vector-psd-mockup.jpg">
+                                    
+                                        <div class="artwork">
+                                            <a href="https://suyo9442.github.io/weltree_renewal/">
+                                                <img src="./img/content4/weltree.jpg" alt="weltree">
+                                            </a>
                                         </div>
                                     </div>
-                                </li>
-                    
-                                <li class="carouselTicker__item">
-                                    <div class="box2">
-                                        <div class="text">
-                                            <ul>
-                                                <li><img src="./img/content2/building.png" alt="책임감"></li>
-                                                <li>책임감 만빵</li>
-                                                <li>제 생활기록부엔 지각이 없었고, 친구들과의 약속에도 절대 늦지 않을 정도로 시간약속을 가장 중요하게 생각해요. 첫단추가 중요하듯 모든 업무의 시작인 시간준수를 잘 꿰지 않으면 안된다고 생각해요!</li>
-                                            </ul>
+                                </div>
+
+                                <div class="guide">🖱 클릭하시면 사이트로 이동합니다 </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="mockup_container">
+                                    <div class="mockup">
+                                        <img src="https://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/12/apple-macbook-pro-retina-flat-design-front-view-vector-psd-mockup.jpg">
+                                    
+                                        <div class="artwork">
+                                            <a href="https://suyo9442.github.io/droptop_renewal/">
+                                                <img src="./img/content4/droptop.jpg" alt="droptop">
+                                            </a>
                                         </div>
                                     </div>
-                                </li>
-                    
-                                <li class="carouselTicker__item">
-                                    <div class="box3">
-                                        <div class="text">
-                                            <ul>
-                                                <li><img src="./img/content2/love.png" alt="배려심"></li>
-                                                <li>세심한 배려심</li>
-                                                <li>제 생활기록부엔 지각이 없었고, 친구들과의 약속에도 절대 늦지 않을 정도로 시간약속을 가장 중요하게 생각해요. 첫단추가 중요하듯 모든 업무의 시작인 시간준수를 잘 꿰지 않으면 안된다고 생각해요!</li>
-                                            </ul>
+                                </div>
+
+                                <div class="guide">🖱 클릭하시면 사이트로 이동합니다 </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="mockup_container">
+                                    <div class="mockup">
+                                        <img src="https://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/12/apple-macbook-pro-retina-flat-design-front-view-vector-psd-mockup.jpg">
+                                    
+                                        <div class="artwork">
+                                            <a href="https://suyo9442.github.io/coffeenamu_final/">
+                                                <img src="./img/content4/coffeenamu.jpg" alt="coffeenamu">
+                                            </a>
                                         </div>
                                     </div>
-                                </li>
-                    
-                                <li class="carouselTicker__item">
-                                    <div class="box4">
-                                        <div class="text">
-                                            <ul>
-                                                <li><img src="./img/content2/broom.png" alt="정리정돈"></li>
-                                                <li>취미가 정리정돈</li>
-                                                <li>제 생활기록부엔 지각이 없었고, 친구들과의 약속에도 절대 늦지 않을 정도로 시간약속을 가장 중요하게 생각해요. 첫단추가 중요하듯 모든 업무의 시작인 시간준수를 잘 꿰지 않으면 안된다고 생각해요!</li>
-                                            </ul>
+                                </div>
+
+                                <div class="guide">🖱 클릭하시면 사이트로 이동합니다 </div>
+                            </div>    
+                            
+                            <div class="swiper-slide">
+                                <div class="mockup_container">
+                                    <div class="mockup">
+                                        <img src="https://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/12/apple-macbook-pro-retina-flat-design-front-view-vector-psd-mockup.jpg">
+                                    
+                                        <div class="artwork">
+                                            <a href="https://suyo9442.github.io/mobile_invitation/">
+                                                <img src="./img/content4/모바일청첩장.jpg" alt="모바일청첩장">
+                                            </a>
                                         </div>
                                     </div>
-                                </li>
-                    
-                                <li class="carouselTicker__item">
-                                    <div class="box5">
-                                        <div class="text">
-                                            <ul>
-                                                <li><img src="./img/content2/clown.png" alt="표현력"></li>
-                                                <li>풍부한 표현력</li>
-                                                <li>제 생활기록부엔 지각이 없었고, 친구들과의 약속에도 절대 늦지 않을 정도로 시간약속을 가장 중요하게 생각해요. 첫단추가 중요하듯 모든 업무의 시작인 시간준수를 잘 꿰지 않으면 안된다고 생각해요!</li>
-                                            </ul>
+                                </div>
+
+                                <div class="guide">🖱 클릭하시면 사이트로 이동합니다 </div>
+                            </div>
+                            
+                            <div class="swiper-slide">
+                                <div class="mockup_container">
+                                    <div class="mockup">
+                                        <img src="https://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/12/apple-macbook-pro-retina-flat-design-front-view-vector-psd-mockup.jpg">
+                                    
+                                        <div class="artwork">
+                                            <a href="https://suyo9442.github.io/xd-copy1/">
+                                                <img src="./img/content4/noren.jpg" alt="noren">
+                                            </a>
                                         </div>
                                     </div>
-                                </li>
+                                </div>
+
+                                <div class="guide">🖱 클릭하시면 사이트로 이동합니다 </div>
+                            </div> 
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                });
+            </script>
+
+            <div id="content4_2">
+                <div class="container">
+                        <div class="title">
+                            <div class="work">
+                                <h1>Design</h1>
+                            </div>
+                        </div>
+                    
+                        <div class="design_work"> 
+                            <a rel="cb" title="청첩장" href="./img/content4_2/청첩장2.jpg"><img src="./img/content4_2/청첩장2.jpg" alt="청첩장1"><p>청첩장</p></a>
+
+                            <a rel="cb" title="청첩장" href="./img/content4_2/청첩장3.jpg"><img src="./img/content4_2/청첩장3.jpg" alt="청첩장2"><p>청첩장</p></a>
+                            
+                            <a rel="cb" title="허브티 포스터" href="./img/content4_2/허브티2.jpg"><img src="./img/content4_2/허브티2.jpg" alt="허브티 포스터"><p>허브티 포스터</p></a>  
+
+                            <a rel="cb" title="대학교 아이콘" href="./img/content4_2/대학교아이콘.png"><img src="./img/content4_2/대학교아이콘.png" alt="대학교 아이콘"><p>대학교 아이콘</p></a>
+                            
+                            <a rel="cb" title="개인작품" href="./img/content4_2/privatework.png"><img src="./img/content4_2/privatework.png" alt="개인작품"><p>개인작품</p></a>
+                                        
+                            <a rel="cb" title="페스티벌 UI카드" href="./img/content4_2/ui카드4.png"><img src="./img/content4_2/ui카드4.png" alt="ui카드"><p>페스티벌 UI카드</p></a>
+                        </div>
+                </div> <!-- // container-->
+            </div>
+
+            <script>
+                $(document).ready(function(){
+                $('a[rel="cb"]').colorbox({
+                    width: 1200,
+                    height: 800,
+                });
+                
+                })
+            </script>
+
+            <div id="content5">
+                <div class="top">
+                    <div class="text-wrapper2">
+                        <div class="text-container2">
+                            <div class="h2">
+                                함께 일할 <span class="color">열정적인</span> 
+                                <span class="down">  
+                                    퍼블리셔를 찾으시나요?
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="container">
+                        <div class="left">
+                            <p>
+                            이럴 때 제가 <br>
+                            <span class="accent">딱</span> 어울릴 것 <br>
+                            같&nbsp;&nbsp;아&nbsp;&nbsp;요&nbsp;
+                            <span><img src="./img/content5/smiling-emoticon-square-face.png" alt="smile"></span>
+                            </p> 
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li><img src="./img/content5/tick.svg" alt="tick">&nbsp; 책임감이 강해 맡은 일에 열의를 다하는 사람이 필요할 때</li>
+                                <li><img src="./img/content5/tick.svg" alt="tick">&nbsp; 함께 일할 때 즐겁고 시너지를 주는 팀원이 필요할 때</li>
+                                <li><img src="./img/content5/tick.svg" alt="tick">&nbsp; 꾸준히 성장하지만 항상 겸손을 잃지않는 사람이 필요할 때</li>
+                                <li><img src="./img/content5/tick.svg" alt="tick">&nbsp; 공감능력이 높아 의사소통이 원활한 사람이 필요할 때</li>
                             </ul>
                         </div>
                     </div>
-                </div> <!-- container -->
-            </div> <!-- //content2 -->
+                </div>
+            </div>
 
-    
+            <div id="content6">
+                <div class="container">
+                    <div class="with">
+                        <p>함께 나누고 싶은 얘기가 있으시다면. . .</p>
+                        <img class="shake-vertical" src="./img/content6/up-arrow-sketch.png" alt="">
+                    </div>
 
-            <div id="content3"></div>
+                    <div class="top">
+                        <div class="contact">
+                            <h1>CONTACT</h1>
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <div class="box">
+                            <ul>
+                                <li>E-MAIL</li>
+                                <li><a href="mailto:suyo9442@naver.com"><img  class="heartbeat" src="./img/content6/email.png" alt="이메일보내기"></a></li>
+                                <li>이메일 보내기</li>
+                            </ul>
+                        </div>
+                        <div class="box">
+                            <ul>
+                                <li>PHONE</li>
+                                <li><a href="tel:01058479442"><img class="heartbeat" src="./img/content6/call.png" alt="전화연결"></a></li>
+                                <li>통화로 연결</li>
+                            </ul>
+                        </div>
+                        <div class="box">
+                            <ul>
+                                <li>KAKAOTALK</li>
+                                <li><a href="https://open.kakao.com/o/sQqZHUIc" target="_blank"><img  class="heartbeat" src="./img/content6/kakao.png" alt="카카오톡보내기"></a></li>
+                                <li>카카오톡으로 연결</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div> <!-- //wrap -->
 
+        <div id="footer">
+            <div class="container">
+                <img src="./img/footer/f_element.png" alt="footer">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

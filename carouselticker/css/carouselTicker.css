@@ -72,30 +72,32 @@
 }
 .box1 {
   background-size: contain;
-  background-image: url('../img/content2/box1.png');
+  background-image: url('../img/box1.png');
 }
 .box2 {
   background-size: contain;
-  background-image: url('../img/content2/box2.png');
+  background-image: url('../img/box2.png');
 }
 .box3 {
   background-size: contain;
-  background-image: url('../img/content2/box3.png');
+  background-image: url('../img/box3.png');
 }
 .box4 {
   background-size: contain;
-  background-image: url('../img/content2/box4.png');
+  background-image: url('../img/box4.png');
 }
 .box5 {
   background-size: contain;
-  background-image: url('../img/content2/box5.png');
+  background-image: url('../img/box5.png');
 }
 .carouselTicker__item .text {
   display: inline-block;
   text-align: center;
   margin: 55px 55px 50px 40px;
 }
-.carouselTicker__item .text > ul > li {margin-bottom: 15px;}
+.carouselTicker__item .text > ul > li {
+  margin-bottom: 15px;
+}
 /* 아이콘 크기 조절 */
 .carouselTicker__item .text > ul > li:nth-child(1) > img {
   width: 100px;
@@ -106,4 +108,5 @@
 }
 .carouselTicker__item .text > ul > li:nth-child(3) {
   font-size: 1.5em;
+  text-align: start;
 }

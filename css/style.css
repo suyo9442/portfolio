@@ -1,49 +1,52 @@
-/* main.css */
-html, body {
-    width: 100%;
-    height: 100%;
-}
-#wrap {
-    width: 100%; 
-    margin: 0 auto;
-    color: #373945;
-}
-#header {
-    width: 100%; height: 100px; 
-    position: absolute;
-    z-index: 10;
+/* style.css */
+
+#wrap {width: 100%;}
+#header {width: 100%; height: 80px; 
+  position: fixed;
+  z-index: 99;
 }
 #visual {
+    width: 100%; 
+    height: 100vh;
     position: relative;
-    width: 100%; height: 100vh;
     margin: 0 auto;
-    background-image: url('../img/visual/visual_bg.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     z-index: -10;
+    overflow: hidden;
 }
-#contents {
-    width: 100%;
+.page-start {
+  width: 100%; height: 5px;
 }
-#content1 {
-    width: 100%; 
-    height: 890px;
-    outline: 1px solid red;
-}
-#content2 {
-    width: 100%; 
-    outline: 1px solid red;
-}
-#content2 > .container {
-    width: 95%;
-    margin: 0 auto;
-}
+#contents {width: 100%;}
+#content1 {width: 100%; margin-top: 100px;}
+#content2 {width: 100%; margin-top: 100px;}
 #content3 {
     width: 100%; 
-    height: 890px;
-    background-color: rgba(255, 94, 0, 0.726);
+    height: 2600px; 
+    margin-top: 150px;
+    background: linear-gradient(#53ADDF 30%,#DEBFCE,rgba(255, 255, 255, 0));
+    position: relative;
 }
+/* 콘텐츠3 fadein */
+.hideme {
+  opacity: 0;
+}
+#content4 {width: 100%; margin-top: 100px;}
+#content4_2 {width: 100%; margin-top: 200px;}
+#content5 {width: 100%; margin-top: 200px;}
+#content6 {width: 100%; margin-top: 250px;}
+#footer {
+    width: 100%; height: 50vw; 
+    background-image: url('../img/footer/f_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#footer > .container > img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
 
 /* 헤더 */
 #header > .container {
@@ -53,11 +56,28 @@ html, body {
     justify-content: space-between;
     position: relative;
 }
-
-#header .nav_left a {font-family:'Righteous', cursive; color: #fff; font-size: 2rem; line-height: 100px;}
-#header .nav_right a {font-family:'Righteous', cursive;color: #fff; font-size: 2rem; line-height: 100px;}
-
-
+/* 헤더로고 */
+.h_logo {
+  width: 48px; height: 48px;
+  background: url('../img/logo2.svg');
+  background-position: center;
+  background-size: cover;
+  margin-top: 15px;
+}
+.h_font {
+  color: #fff;
+  font-family:'Righteous', cursive;  
+  font-size: 2rem;
+  line-height: 80px;
+}
+.h_font_change {
+  color: #373945;
+}
+.h_logo_change {
+  background: url('../img/logo2.png');
+  background-position: center;
+  background-size: cover;
+}
 /* 정렬 */
 #header .nav_left > ul > li {
     float: left;
@@ -72,423 +92,11 @@ html, body {
     padding-left: 45px;
 }
 
-
-/* 비주얼 텍스트 */
-#visual .visual_text {
-    width: 1200px; margin: 0 auto;
-    text-align: center;  
-}
-/* 비주얼 빌딩들 */
-#visual > .element {
-    position: relative; 
-    height: 0;
-}
-.building1 {
-    width: 42%; height: 100vh;
-    background-image: url('../img/visual/building1.png'); 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute; 
-    left: 0;
-    /* top: 13px */
-    z-index: -8;
-}
-.building2 {
-    width: 28%; height: 100vh;
-    background-image: url('../img/visual/building2.png'); 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute; 
-    left: 39%;
-    z-index: -8;
-}
-.building3 {
-    width: 34%; height: 100vh;
-    background-image: url('../img/visual/building3.png'); 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute; 
-    right: 0;
-    z-index: -8;
-}
-
-/* 콘텐츠2 */
-#content2 .top {
-    margin-top: 10vh;
-    margin-bottom: 15vh;
-}
-#content2 .bottom {
-    padding-bottom: 10vh;
-}
-/* 저는 이런 사람이에요.css */
-#content2 .top {
-    width: 100%; height: 10vh;
-    /* outline: 1px solid red; */
-    position: relative;
-} 
-#content2 .text-wrapper {
-  /* position: absolute; */
-  z-index: 0;
-}
-#content2 .text-container {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  /* position: fixed; */
-  top: 30%;
-  width: 100%;
-}
-#content2 .text-container > .h1 {
-    font-size: 8rem;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-    word-break: keep-all;
-    transform: translateX(0px);
-    /* 텍스트 이동 크기 조절 */
-    margin-left: 50%; 
-}
-#content2 .text-container > .h1 > span {
-    color: #BEBAE7;
-    text-shadow: none;
-}
-
-
-
-
-/****** for 축소할 시 일관성  ******/
-@media (max-width: 4000px) {
-    #wrap {width: 100%;}
-    #header {width: 100%;}
-    #header > .container {width: 80%;}
-    #visual {width: 100%;}
-    #visual .visual_text {width: 100%; padding-top: 30vh;}
-    #contents {width: 100%;}
-    #content1 > .container { width: 80%; margin: 0 auto;}
-
-    .building1 {
-        width: 42%;
-        position: absolute; 
-        left: 0;
-    }
-    .building2 {
-        width: 28%;
-        position: absolute; 
-        left: 39%;
-    }
-    .building3 {
-        width: 34%;
-        position: absolute; 
-        right: 0;
-    }
-    /* 헤더 네비 */
-    #header .nav_left > ul > li > a {
-        display: block;
-    }
-    #header .nav_right > ul > li > a {
-        display: block;
-    }
-    /* 헤더 로고 */
-    #header > .container > h1 > a {
-        line-height: 139px;
-    }
-    /* 햄버거 */
-    #header .hamburger {
-        display: none;
-    }
-    /* 비주얼 텍스트 */
-    #visual .visual_text h1 {
-        font-size: 4rem;   
-        color: #fff;
-        font-family: 'Archivo Black', sans-serif;
-    }
-    #visual .visual_text > div > img {
-        width: 23px;
-    }
-    #visual .visual_text > .quote1 {
-        margin-bottom: 7px;
-    }
-    #visual .visual_text > .quote2 {
-        margin-top: 7.5px;
-    }
-    /* 콘텐츠1 */
-    #content1 > .container > .top {
-        height: 350px;
-        padding: 100px 0;
-    }
-    #content1 > .container > .top > div {
-        float: left;
-    }
-    #content1 > .container > .top > .left {
-        width: 20%; 
-    }
-    #content1 > .container > .top > .middle {
-        width: 30%; 
-    }
-    #content1 > .container > .top > .right {
-        width: 50%; 
-    }
-    #content1 > .container > .bottom > div {
-        width: 31%; 
-        height: 100px;
-        float: left;
-        padding-right: 2.3%;
-    }
-
-    /* top left */
-    #content1 .top > .left > .iam {
-        width: 150px;
-        height: 30px;
-        background-color: #DBB9E0;
-        margin-left: 30px;
-        position: relative;
-        
-    }
-    #content1 .top > .left h1 {
-        font-family: 'Archivo Black', sans-serif;
-        font-size: 5rem;
-        font-weight: 800;
-        text-shadow: 3px 0 #fff;
-        position: absolute;
-        top: -40px;
-        left: 10px;
-    }
-    /* top middle */
-    #content1 .top > .middle > img {
-        width: 300px;
-    }
-    /* top .right */
-    #content1 .top > .right > h2 {
-        font-family: 'Archivo Black', sans-serif;
-        font-size: 2.5rem;
-        padding-left: 2vh;
-    }
-    #content1 .top > .right > p {
-        font-size: 1.6rem;
-        padding-left: 2vh;
-        padding-right: 3vh;
-    }
-    /* .bottom */
-    #content1 > .container > .bottom > div h2 {
-        font-family: 'Archivo Black', sans-serif;
-        font-size: 2.5rem;
-        border-bottom: 2px solid #373945;
-    }
-    #content1 > .container > .bottom > div p {
-        margin-top: 2vh;
-        font-size: 1.6rem;
-        /* white-space: nowrap; */
-    }
-    #content1 > .container > .bottom > div p span {
-        font-size: 1.4rem;
-        color: #C2C2C2;
-    }
-}
-
-/****** 화면 너비 0~1200px (20px는 오차범위) ******/
-@media (max-width: 1220px) {
-    #content1 > .container > .top > .right {
-        width: 45%; 
-    }
-    /* top left */
-    #content1 .top > .left > .iam {
-        margin-left: 0px; 
-    }
-    #content1 .top > .left h1 {
-        top: -40px;
-        left: 0px;
-    }
-    /* top .right */
-    #content1 .top > .right > h2 {
-        padding-left: 6vh;
-    }
-    #content1 .top > .right > p {
-        padding-left: 6vh;
-    }
-}
-
-/*** 834 단말기 겹치는 부분 해소 */
-@media (max-width: 1080px) {
-    /* top .right */
-    #content1 .top > .right > h2 {
-        padding-left: 15vh;
-    }
-    #content1 .top > .right > p {
-        padding-left: 15vh;
-    }
-}
-
-/****** 화면 너비 0~768px ******/
-@media (max-width: 800px) {    
-    #content1 {height: 1350px;}
-    #content1 > .container {width: 90%;}
-    #header > .container { width: 90%;}
-    .building1 {
-        width: 42%; height: 75vh;
-        position: absolute;
-        left: 0;
-        top: 25vh;
-    }
-    .building2 {
-        width: 28%; height: 75vh;
-        position: absolute; 
-        left: 39%;
-        top: 25vh;
-    }
-    .building3 {
-        width: 34%; height: 75vh;
-        position: absolute; 
-        right: 0;
-        top: 25vh;
-    }
-
-    /* 헤더 네비 */
-    #header .nav_left > ul > li > a {
-        display: none;
-    }
-    #header .nav_right > ul > li > a {
-        display: none;
-    }
-
-    /* 햄버거 */
-    #header .hamburger {
-        display: block;
-        position: absolute;
-    }
-
-    /* 비주얼 텍스트 */
-    #visual .visual_text h1 {
-        font-size: 4rem;
-    }
-    #visual .visual_text > div > img {
-        width: 24px;
-    }
-    #visual .visual_text > .quote1 {
-        margin-bottom: 5px;
-    }
-    #visual .visual_text > .quote2 {
-        margin-top: 5px;
-    }
-
-    /* 콘텐츠1 */
-    #content1 > .container > .top {height: 100%;}
-    #content1 > .container > .top > div {float: none;}
-    #content1 .top > .left > .iam {display: inline-block;}
-    #content1 > .container > .top > .left {
-        width: 100%; 
-        text-align: center;
-        padding-bottom: 8vh;
-    }
-    #content1 > .container > .top > .middle {
-        float: left;
-        width: 50%; 
-    }
-    #content1 > .container > .top > .right {
-        float: left;
-        width: 50%; 
-    }
-    #content1 > .container > .bottom > div {
-        width: 100%; height: 100%;
-        float: none;
-        clear: both;
-    }
-    /* top middle */
-    #content1 .top > .middle > img {
-        margin-bottom: 5vh;
-    }
-    /* top .right */
-    #content1 .top > .right > h2 {
-        padding-left: 0vh;
-        padding-top: 0vh;
-    }
-    #content1 .top > .right > p {
-        padding-left: 0vh;
-    }
-    /* .bottom */
-    #content1 > .container > .bottom > div {
-        margin-top: 8vh;
-    }
-}
-
-
-/****** 화면 너비 0-480px (20px 여백) ******/
-@media (max-width: 500px) {
-    #content1 {height: 1450px;}
-    #header > .container { width: 100%;}
-    .building1 {
-        width: 42%; height: 50vh;
-        position: absolute; 
-        left: 0;
-        top: 50vh;
-    }
-    .building2 {
-        width: 28%; height: 50vh;
-        position: absolute; 
-        left: 39%;
-        top: 50vh;
-    }
-    .building3 {
-        width: 34%; height: 50vh;
-        position: absolute; 
-        right: 0;
-        top: 50vh;
-    }
-    /* 햄버거 */
-    #header .hamburger {
-        position: absolute;
-        right: 20px;
-    }
-    #header .hamburger > a > img {
-        width: 40px;
-    }
-    /* 헤더로고 */
-    #header > .container > h1 > a {
-        line-height: 130px;
-    }
-    /* 비주얼 텍스트 */
-    #visual .visual_text {padding-top: 23vh;}
-    #visual .visual_text h1 {
-        font-size: 2.5rem;   
-    }
-    #visual .visual_text > div > img {
-        width: 17px;
-    }
-
-    /* 콘텐츠1 */
-    #content1 > .container > .top {
-        padding: 80px 0 30px 0;
-    }
-    #content1 > .container > .top > .middle {
-        text-align: center;
-        float: none;
-        width: 100%; 
-    }
-    #content1 > .container > .top > .right {
-        text-align: center;
-        float: none;
-        width: 100%; 
-    }
-    #content1 > .container > .bottom > div {
-        width: 100%; height: 100%;
-    }
-    /* top .right */
-    #content1 .top > .right > h2 {
-        padding-left: 0vh;
-    }
-    #content1 .top > .right > p {
-        padding-left: 0vh;
-    }
-    /* .bottom */
-    #content1 > .container > .bottom > div {
-        margin-top: 5vh;
-    }
-} /* end 미디어쿼리 */
-
-
 /* 햄버거 */
+.hamburger {
+    display: none;
+    z-index: 99;
+}
 .bg-cover {
 	position: fixed;
     top: 0;
@@ -523,7 +131,7 @@ html, body {
 	width: 70px;
 	height: 100px;
 	overflow: auto;
-	left: calc(100% - 75px);
+	left: calc(100% - 70px);
 	top: 19px;
 	cursor: pointer;
 }
@@ -533,10 +141,13 @@ html, body {
 	height: 4px;
 	background-color: #fff;
 	transition: all 350ms ease-in-out;
-	top: 15px;
+	top: 9px;
+}
+.hamburger_color {
+  background-color: #373945;
 }
 .h_middle {
-	top: 35px;
+	top: 29px;
 }
 #menu {
 	position: fixed;
@@ -576,3 +187,1094 @@ html, body {
 	background-color: rgb(0, 0, 0);
 	height: 2px;
 }
+
+
+
+/* 비주얼 */
+/* 빌딩들 */
+#visual > .element {
+    position: relative; 
+    height: 0;
+}
+.building1 {
+    width: 42%; height: 100vh;
+    background-image: url('../img/visual/building1.png'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute; 
+    left: 0;
+    /* top: 13px */
+    z-index: -8;
+}
+.building2 {
+    width: 28%; height: 100vh;
+    background-image: url('../img/visual/building2.png'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute; 
+    left: 39%;
+    z-index: -8;
+}
+.building3 {
+    width: 34%; height: 100vh;
+    background-image: url('../img/visual/building3.png'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute; 
+    right: 0;
+    z-index: -8;
+}
+ 
+
+/* 비주얼 텍스트 */
+#visual .visual_text {
+    width: 1200px; margin: 0 auto;
+    text-align: center;  
+    padding-top: 40vh;
+}
+#visual .visual_text h1 {
+    font-size: 5rem;   
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+}
+#visual .visual_text > div > img {
+    width: 25px;
+}
+#visual .visual_text > .quote1 {
+    margin-bottom: 7px;
+}
+#visual .visual_text > .quote2 {
+    margin-top: 8px;
+}
+
+
+/* 콘텐츠1 */
+#content1 > .container {
+    width: 1200px;
+    margin: 0 auto;
+}
+/* top */
+#content1 .top {
+    display: flex;
+    justify-content: space-between;
+}
+/* top요소들 여백 */
+#content1 .top > div {
+    margin-right: 30px;
+}
+#content1 .top > .left > div.iam {
+    width: 150px;
+    height: 30px;
+    background-color: #DBB9E0;
+    position: relative;
+    margin-top: 20px;
+}
+#content1 .top > .left > div.iam > h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    text-shadow: 3px 0 #fff;
+    position: absolute;
+    top: -40px;
+    left: 10px;
+}
+#content1 .top > .middle > img {
+    width: 300px;
+}
+#content1 .top > .right > h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.5rem;
+}
+#content1 .top > .right > p {
+    font-size: 1.6rem;
+}
+/* .bottom */
+#content1 .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+#content1 .bottom > div { 
+    width: 300px;
+    margin-right: 20px; 
+}
+#content1 .bottom > div:last-child { 
+    margin-right: 0px; 
+}
+#content1 .bottom > div:first-child > p {
+    line-height: 30px;
+}
+#content1 > .container > .bottom > div h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #373945;
+}
+#content1 > .container > .bottom > div > p {
+    font-size: 1.6rem;
+    margin-top: 2vh;
+}
+#content1 > .container > .bottom > div > p >  span {
+    font-size: 1.4rem;
+    color: #C2C2C2;
+}
+
+
+/* 콘텐츠2 */
+/* 저는 이런 사람이에요.css */
+#content2 .top {
+    width: 100%; 
+    position: relative;
+} 
+#content2 .bottom {
+    margin-top: 50px;
+}
+#content2 .text-wrapper {
+  z-index: 0;
+}
+#content2 .text-container {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  /* position: fixed; */
+  top: 30%;
+  width: 100%;
+}
+#content2 .text-container > .h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    word-break: keep-all;
+    transform: translateX(0px);
+    /* position: fixed; */
+      /* fixed 해제하고, 조절해줘야 지정 위치에 나타남 */
+    margin-left: 600px; 
+}
+#content2 .text-container > .h1 > span {
+    color: #BEBAE7;
+    text-shadow: none;
+}
+
+
+/* 콘텐츠3 */
+#content3 > .container {
+    width: 1200px;
+    margin: 0 auto;
+    color: #373945;
+    position: relative;
+    top: 200px;
+    text-align: right;
+}
+/* 저는 이런 것들을 할 수 있어요 */
+#content3 div.ican {
+  display: inline-block;
+  padding-right: 300px;
+}
+#content3 div.ican > h1{
+    writing-mode: vertical-rl;
+    font-size: 3em;
+    color: #fff;
+    font-weight: 300;
+}
+
+
+ 
+
+ /* 콘텐츠2 flip1 */
+  /* turning on hover */
+  .flip-container:hover .flipper {
+    transform: rotateY(180deg);
+  }
+  /* flipping speed here */
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+  }
+  .flip-container1,
+  .front1,
+  .back1 {
+    width: 320px;
+    height: 320px;
+    text-align: center;
+    border-radius: 200px;
+  }
+  .front1,
+  .back1 {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* front side */
+ .front1 {
+    z-index: 2;
+    background-color: #F5F3F2;
+    color: #B2C3E0;
+    line-height: 320px;
+}
+ .front1 > p {
+    font-family:'Righteous', cursive;
+    font-size: 4rem;
+  }
+  /* back side */
+  .back1 {
+    transform: rotateY(180deg);
+    background-color: #B2C3E0;
+    color: #F5F3F2;
+    line-height: 320px;
+  }
+  .back1 > p {
+    font-family:'Righteous', cursive;
+    font-size: 8rem;
+  }
+
+
+ /* 콘텐츠2 flip2 */
+  .flip-container2,
+  .front2,
+  .back2 {
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    border-radius: 200px;
+  }
+  .front2,
+  .back2 {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* front side */
+ .front2 {
+    z-index: 2;
+    background-color: #F1CEC6;
+    color: #F5F3F2;
+    line-height: 350px;
+}
+ .front2 > p {
+    font-family:'Righteous', cursive;
+    font-size: 5rem;
+
+  }
+  /* back side */
+  .back2 {
+    transform: rotateY(180deg);
+    background-color: #F5F3F2;
+    color:  #F1CEC6;
+    line-height: 350px;
+  }
+  .back2 > p {
+    font-family:'Righteous', cursive;
+    font-size: 10rem;
+  }
+
+
+  /* 콘텐츠2 flip3 */
+  .flip-container3,
+  .front3,
+  .back3 {
+    width: 280px;
+    height: 280px;
+    text-align: center;
+    border-radius: 200px;
+  }
+  .front3,
+  .back3 {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* front side */
+ .front3 {
+    z-index: 2;
+    border: 10px solid #F5F3F2;
+    color: #F5F3F2;
+}
+ .front3 > p {
+    font-family:'Righteous', cursive;
+    font-size: 4rem;
+    margin-top: 85px;
+}
+  /* back side */
+  .back3 {
+    transform: rotateY(180deg);
+    border: 10px solid #F5F3F2;
+    color:  #F5F3F2;
+    line-height: 280px;
+  }
+  .back3 > p {
+    font-family:'Righteous', cursive;
+    font-size: 10rem;
+  }
+
+
+  /* 콘텐츠2 flip4 */
+  .flip-container4,
+  .front4,
+  .back4 {
+    width: 330px;
+    height: 330px;
+    text-align: center;
+    border-radius: 200px;
+  }
+  .front4,
+  .back4 {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* front side */
+ .front4 {
+    z-index: 2;
+    background-color: #83D09E;
+    color: #F5F3F2;
+    line-height: 330px;
+}
+ .front4 > p {
+    font-family:'Righteous', cursive;
+    font-size: 5rem;
+
+  }
+  /* back side */
+  .back4 {
+    transform: rotateY(180deg);
+    background-color: #F5F3F2;
+    color:  #83D09E;
+    line-height: 330px;
+  }
+  .back4 > p {
+    font-family:'Righteous', cursive;
+    font-size: 10rem;
+  }
+
+
+  /* 콘텐츠2 flip5 */
+  .flip-container5,
+  .front5,
+  .back5 {
+    width: 360px;
+    height: 360px;
+    text-align: center;
+    border-radius: 200px;
+  }
+  .front5,
+  .back5 {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* front side */
+ .front5 {
+    z-index: 2;
+    background-color: #B1B8D8;
+    color: #F5F3F2;
+    line-height: 360px;
+}
+ .front5 > p {
+    font-family:'Righteous', cursive;
+    font-size: 4rem;
+
+  }
+  /* back side */
+  .back5 {
+    transform: rotateY(180deg);
+    background-color: #F5F3F2;
+    color:  #B1B8D8;
+    line-height: 360px;
+  }
+  .back5 > p {
+    font-family:'Righteous', cursive;
+    font-size: 10rem;
+  }
+
+
+   /* 콘텐츠2 flip6 */
+   .flip-container6,
+   .front6,
+   .back6 {
+     width: 260px;
+     height: 260px;
+     text-align: center;
+     border-radius: 200px;
+   }
+   .front6,
+   .back6 {
+     backface-visibility: hidden;
+     position: absolute;
+     top: 0;
+     left: 0;
+   }
+   /* front side */
+  .front6 {
+     z-index: 2;
+     background-color: #003F5C;
+     color: #F5F3F2;
+     line-height: 260px;
+ }
+  .front6 > p {
+     font-family:'Righteous', cursive;
+     font-size: 4rem;
+ 
+   }
+   /* back side */
+   .back6 {
+     transform: rotateY(180deg);
+     background-color: #F5F3F2;
+     color:  #003F5C;
+     line-height: 260px;
+   }
+   .back6 > p {
+     font-family:'Righteous', cursive;
+     font-size: 7rem;
+   }
+
+   /* flip 위치 */
+  .flip-container1 {position: absolute; top:300px; left: 150px;}
+  .flip-container2 {position: absolute; top:600px; right: 0px;}
+  .flip-container3 {position: absolute; top:800px; left: 0;}
+  .flip-container4 {position: absolute; top:1200px; right: 200px;}
+  .flip-container5 {position: absolute; top:1500px; left: 120px;}
+  .flip-container6 {position: absolute; top:1900px; right: 60px;}
+
+
+
+/* 콘텐츠4 */
+#content4 .top {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 80px;
+}
+#content4 .top > div.work {
+  width: 320px;
+  height: 30px;
+  background-color: #DBB9E0;
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+}
+#content4 .top > div.work > h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  text-shadow: 3px 0 #fff;
+  position: absolute;
+  top: -40px;
+  left: 19px;;
+}
+
+
+
+/* 콘텐츠4 mockup */
+.mockup_container {
+max-width: 900px;
+margin: 0 auto;
+}
+.mockup_container img {
+width: 100%;
+}
+.mockup_container .mockup {
+position: relative;
+width: 80%;
+margin: 0 auto;
+} 
+.mockup_container .artwork {
+position: absolute;
+width: 76%;
+height: 75%;
+top: 9%;
+left: 11.75%;
+overflow: scroll;
+overflow-x: hidden;
+}
+.mockup_container .artwork > img {
+  background-color: red;
+}
+
+
+/* 콘텐츠4_2 Design Work */
+#content4_2 > .container {
+  width: 1200px; 
+  margin: 0 auto;
+}
+#content4_2 .title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+#content4_2 .title > div.work {
+  width: 220px;
+  height: 30px;
+  background-color: #DBB9E0;
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+}
+#content4_2 .title > div.work > h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  text-shadow: 3px 0 #fff;
+  position: absolute;
+  top: -40px;
+  left: 17px;
+}
+/* 콘텐츠4_2 design work */
+.design_work {
+  text-align: center;
+}
+.design_work > a {
+  display: inline-block;
+  width: 370px;
+  height: 370px;
+  overflow: hidden;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.design_work > a:nth-child(3),
+.design_work > a:nth-child(6) {
+  margin-right: 0;
+}
+.design_work > a > img {
+  width: 370px;
+}
+.design_work > a > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  opacity: 0;
+  color: #000;
+  font-size: 2rem;
+  transition: all 0.5s;
+}
+.design_work > a:hover > img {
+  opacity: 0.3;
+  transition: 0.5s;
+}
+.design_work > a:hover > p {
+  opacity: 1;
+  transition: 0.5s;
+  text-align: center;
+}
+
+
+
+
+/* 콘텐츠5 */
+#content5 > .container {
+    width: 1200px; height: inherit;
+    margin: 0 auto;
+    outline: 1px solid red;
+    position: relative;
+}
+/* 열정적인 퍼플리셔를 찾고 계신가요? */
+#content5 .text-wrapper2 {
+    position: relative;
+    z-index: 0;
+}
+#content5 .text-container2 {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    /* position: fixed; */
+    top: 30%;
+    width: 100%;
+}
+#content5 .text-container2 > .h2 {
+    font-size: 9rem;
+    font-weight: 700;
+    word-break: keep-all;
+    color: #fff;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    transform: translateX(0px);
+    /* fixed 해제하고, 조절해줘야 지정 위치에 나타남 */
+    margin-left: -7000px;
+}
+#content5 .text-container2 > .h2 > span.color {
+    color: #BEBAE7;
+    text-shadow: none;
+}
+/* 이럴 때 제가 딱 어울릴 것 같아요 */
+#content5 .bottom {margin-top: 50px; overflow: hidden; margin-top: 100px;}
+#content5 > .bottom > .container > div {
+    /* float: left; */
+    display: inline-block;
+}
+#content5 > .bottom > .container {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+#content5 .bottom > .container > div {
+    margin-left: 50px;
+}
+#content5 .bottom .left > p{
+    font-size: 9rem;
+    font-weight: 700;
+}
+#content5 .bottom .left > p > span > img {
+    width: 7rem;
+}
+#content5 .bottom .left > p > span.accent {
+    color: #BEBAE7;
+}
+/* 리스트들 */
+#content5 .bottom .right  {
+  /* outline: 1px solid red; */
+  transform: translateY(-95px);
+}
+#content5 .bottom .right > ul > li {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+}
+#content5 .bottom .right > ul > li > img {
+    width: 8px;
+}
+
+
+/* 콘텐츠6 */
+#content6 > .container {
+    width: 900px;
+    margin: 0 auto;
+}
+/* 함께 나누고 싶은 얘기가 있으신가요? */
+#content6 .with {
+    text-align: center;
+    margin-bottom: 120px;
+}
+  #content6 .with > p {
+    font-size: 2rem;
+    color: #C3C3C3;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+/* 콘텐츠6 Contact */
+#content6 .top > div.contact {
+    width: 285px;
+    height: 30px;
+    background-color: #DBB9E0;
+    position: relative;
+}
+#content6 .top > div.contact > h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    text-shadow: 3px 0 #fff;
+    position: absolute;
+    top: -40px;
+    left: 10px;
+}
+#content6 .top > div.contact {
+    display: inline-block;
+}
+#content6 .top {
+    text-align: center;
+    margin-bottom: 100px;
+}
+#content6 > .container > .bottom {
+    display: flex;
+    justify-content: space-between;
+}
+#content6 .bottom > .box {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #373945;
+    text-align: center;
+}
+#content6 .bottom > .box > ul > li {
+    margin-bottom: 20px;
+}
+#content6 .bottom > .box > ul > li:nth-child(2) {
+    margin-bottom: 5px;
+}
+#content6 .bottom > .box > ul > li:nth-child(3) {
+    font-size: 1.2rem;
+    color: #37394552;
+}
+/* 아이콘 크기 */
+#content6 .bottom > .box > ul > li:nth-child(2) img {
+  width: 70px;
+}
+
+
+@media (max-width: 1220px) {
+    #header > .container {
+        width: auto;
+    }
+    #visual .visual_text {
+        width: auto;
+    }
+    #content1 > .container {
+        padding: 0 30px 0 30px;
+        width: auto; 
+    }
+    #content3 > .container {
+        width: auto; 
+    }
+    #content4 .top {
+      width: auto;
+    }
+    #content4_2 > .container {
+      width: auto;
+    }
+
+    #content5 > .bottom > .container {
+        width: auto;
+    }
+    #content6 > .container {
+        width: auto; 
+    }
+    /* 함께 할 열정적인 퍼블리셔를 찾으시나요? */
+    #content5 .text-container2 > .h2 {
+        /* margin-left: -4000px; */
+    }    
+    #content5 .text-container2 > .h2 > span.down {
+        display: block;
+    }
+}
+
+@media (max-width: 1015px) {
+    #content5 > .bottom > .container > div {
+        display: block;
+        text-align: center;
+    }
+    #content5 .bottom > .container > div {
+        margin-left: 0px;
+    }
+    #content5 .bottom > .container > .left {
+        margin-bottom: 50px;
+    }
+     /* 저는 이런 사람이에요 */
+     #content2 .text-container > .h1 {
+        margin-left: 110px; 
+    }
+     /* 함께 할 열정적인 퍼블리셔를 찾으시나요? */
+     #content5 .text-container2 > .h2 {
+        font-size: 7rem;
+        margin-left: -7450px;
+    }  
+    #content5 .bottom .left > p{
+      font-size: 7rem;
+  }
+     /* 리스트 수직정렬 풀기*/
+    #content5 .bottom .right  {
+        transform: translateY(0px);
+      }      
+}
+
+@media (max-width: 768px) {
+    /* 햄버거 */
+    .hamburger {
+        display: block;
+    }
+    #header .nav_left {
+        display: none;
+    }
+    #header .nav_right {
+        display: none;
+    }
+    /* 헤더로고 */
+    .h_logo {
+      margin-top:15px;
+      margin-left: 20px;
+    }
+
+    .building1 {
+        width: 42%; height: 75vh;
+        position: absolute;
+        left: 0;
+        top: 25vh;
+    }
+    .building2 {
+        width: 28%; height: 75vh;
+        position: absolute; 
+        left: 39%;
+        top: 25vh;
+    }
+    .building3 {
+        width: 34%; height: 75vh;
+        position: absolute; 
+        right: 0;
+        top: 25vh;
+    }
+    /* 비주얼 텍스트 */
+    #visual .visual_text {padding-top: 23vh;}
+    #visual .visual_text h1 {
+        font-size: 4rem;   
+    }
+    #visual .visual_text > div > img {
+        width: 25px;
+    }
+
+    /* 콘텐츠1 */
+    #content1 .bottom {
+        display: block;
+    }
+    #content1 .bottom > div > h2 {
+        display: inline-block;
+        width: 100%;
+    }
+    #content1 .bottom > div {
+        margin-bottom: 30px;
+    }
+    #content1 .top {
+        display: block;
+        /* text-align: center; */
+        margin-bottom: 50px;
+    }
+    #content1 .top > div.left {
+        text-align: center;
+    }
+    #content1 .top > div.left > div.iam {
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    #content1 .top > div.middle {
+        margin-bottom: 30px;
+    }
+    #content1 .top > div.middle {
+        text-align: center;
+    } 
+
+    /* 저는 이런 사람이에요 */
+    #content2 .text-container > .h1 {
+        margin-left: 750px; 
+        font-size: 7rem;
+    }
+
+    /* 저는 이런 것들을 할 수 있어요 */
+    #content3 div.ican {
+      padding-right: 100px;
+    }
+    /* flip 위치 */
+    .flip-container1 {position: absolute; top:300px; left:50px;}
+    .flip-container2 {position: absolute; top:600px; right:20px;}
+    .flip-container3 {position: absolute; top:800px; left:30px;}
+    .flip-container4 {position: absolute; top:1110px; right: 30px;}
+    .flip-container5 {position: absolute; top:1500px; left: 50px;}
+    .flip-container6 {position: absolute; top:1900px; right: 60px;}
+
+    /* 함께 할 열정적인 퍼블리셔를 찾으시나요? */
+    #content5 .text-container2 > .h2 {
+    font-size: 7rem;
+    margin-left: -9000px;
+    }  
+}
+
+
+@media (max-width: 501px) {    
+    #content3 {height: 1600px; }
+    #content6 {margin-top: 200px;}
+    .building1 {
+        width: 42%; height: 50vh;
+        position: absolute; 
+        left: 0;
+        top: 50vh;
+    }
+    .building2 {
+        width: 28%; height: 50vh;
+        position: absolute; 
+        left: 39%;
+        top: 50vh;
+    }
+    .building3 {
+        width: 34%; height: 50vh;
+        position: absolute; 
+        right: 0;
+        top: 50vh;
+    }
+
+    /* 비주얼 텍스트 */
+    #visual .visual_text {padding-top: 23vh;}
+    #visual .visual_text h1 {
+        font-size: 4rem;   
+    }
+    #visual .visual_text > div > img {
+        width: 20px;
+    }
+    
+    /* 저는 이런 사람이에요 */
+    #content2 .text-container > .h1 {
+      margin-left: 1000px;
+      font-size: 5rem;
+    }
+
+    /* 콘텐츠3 */
+    #content3 > .container {
+      top: 150px;
+    }
+    /* 저는 이런 것들을 할 수 있어요 */
+    #content3 div.ican > h1{
+        font-size: 2em;
+    }
+    /* 콘텐츠3 */    
+  .flip-container1,
+  .front1,
+  .back1 {
+    width: 180px;
+    height: 180px;
+  }
+  .front1 {
+      line-height: 180px;
+  }
+ .front1 > p {
+    font-size: 2.5rem;
+  }
+ .back1 {
+    line-height: 180px;
+  }
+ .back1 > p {
+    font-size: 6rem;
+  }
+
+
+  .flip-container2,
+  .front2,
+  .back2 {
+    width: 200px;
+    height: 200px;
+  }
+  .front2 {
+      line-height: 200px;
+  }
+ .front2 > p {
+    font-size: 4rem;
+  }
+ .back2 {
+    line-height: 200px;
+  }
+ .back2 > p {
+    font-size: 6rem;
+  }
+
+
+  .flip-container3,
+  .front3,
+  .back3 {
+    width: 160px;
+    height: 160px;
+  }
+ .front3 > p {
+    font-size: 2rem;
+    margin-top: 50px;
+  }
+ .back3 {
+    line-height: 160px;
+  }
+ .back3 > p {
+    font-size: 6rem;
+  }
+
+  .flip-container4,
+  .front4,
+  .back4 {
+    width: 170px;
+    height: 170px;
+  }
+  .front4 {
+      line-height: 170px;
+  }
+ .front4 > p {
+    font-size: 4rem;
+  }
+ .back4 {
+    line-height: 170px;
+  }
+ .back4 > p {
+    font-size: 6rem;
+  }
+
+  .flip-container5,
+  .front5,
+  .back5 {
+    width: 160px;
+    height: 160px;
+  }
+  .front5 {
+      line-height: 160px;
+  }
+ .front5 > p {
+    font-size: 2rem;
+  }
+ .back5 {
+    line-height: 160px;
+  }
+ .back5 > p {
+    font-size:6rem;
+  }
+
+  .flip-container6,
+  .front6,
+  .back6 {
+    width: 120px;
+    height: 120px;
+  }
+  .front6 {
+      line-height: 120px;
+  }
+ .front6 > p {
+    font-size: 2rem;
+  }
+ .back6 {
+    line-height: 120px;
+  }
+ .back6 > p {
+    font-size: 4rem;
+  }
+  .flip-container1 {top:100px; left: 50px;}
+  .flip-container2 {top:350px; right: 20px;}
+  .flip-container3 {top:600px; left: 15px;}
+  .flip-container4 {top:800px; right: 20px;}
+  .flip-container5 {top:1000px; left: 20px;}
+  .flip-container6 {top:1200px; right: 60px;}  
+ 
+  /* 콘텐츠4_2 Design Work */
+  .design_work > a {
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .design_work > a > img {
+    width: 180px;
+  }
+
+  /* 콘텐츠5 */
+  #content5 .bottom .left > p{
+      font-size: 6rem;
+  }
+  #content5 .bottom .right > ul > li {
+      font-size: 1.4rem;
+  }
+
+  /* 함께 할 열정적인 퍼블리셔를 찾으시나요? */
+  #content5 .text-container2 > .h2 {
+    font-size: 7rem;
+    /* margin-left: -20000px; 못참겠다 꾀꼬리*/
+  }  
+} /* //width: 501px */
+
+
+#content4 .guide {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.2rem;
+  color: rgb(165, 165, 165);
+}
+
+
+
+
+  
